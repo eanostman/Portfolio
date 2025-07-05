@@ -1,0 +1,22 @@
+.footer-overlay {
+      background-color: #e9ecefD9; /* light gray */
+      color: #212529; /* dark text */
+    }
+    @media (prefers-color-scheme: dark) {
+      .footer-overlay {
+        background-color: #343a40D9; /* dark gray */
+        color: #fff; /* light text */
+      }
+    }
+
+    
+    @media (prefers-color-scheme: dark) {
+      .auto-navbar {
+        background-color: #212529 !important; /* Bootstrap dark */
+      }
+      .auto-navbar .navbar-brand,
+      .auto-navbar .nav-link {
+        color: #b6b6b6 !important;
+      }
+      
+    }
