@@ -22,3 +22,12 @@
         color: #b6b6b6 !important; /* muted text for dark background */
       }
 }
+
+@media (max-width: 576px) {
+  .intro-overlay {
+    min-width: unset !important;
+    width: 90vw !important;
+    padding: 1rem !important;
+    font-size: 1rem !important;
+  }
+}
