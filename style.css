@@ -1,40 +1,75 @@
+/* Reset some default spacing for mobile friendliness */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+/* Make hero-section fill the viewport and prevent overflow */
+.hero-section {
+  min-height: 100vh;
+  width: 100vw;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.hero-img {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  min-height: 300px;
+  object-fit: cover;
+  z-index: 1;
+  max-width: 100vw;
+  max-height: 100vh;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Footer overlay styling */
 .footer-overlay {
-      background-color: #e9ecefD9; /* light gray */
-      color: #212529; /* dark text */
-    }
-    @media (prefers-color-scheme: dark) {
-      .footer-overlay {
-        background-color: #343a40D9; /* dark gray */
-        color: #fff; /* light text */
-      }
-    }
+  background: rgba(0,0,0,0.5);
+  color: #fff;
+  z-index: 2;
+  position: relative;
+  width: 100vw;
+}
 
-    
-    @media (prefers-color-scheme: dark) {
-      .auto-navbar {
-        background-color: #212529 !important; /* Bootstrap dark */
-      }
-      .auto-navbar .navbar-brand,
-      .auto-navbar .nav-link {
-        color: #b6b6b6 !important;
-      }
-      
-    }
-
+/* Responsive adjustments for mobile */
+@media (max-width: 576px) {
+  .hero-section {
+    min-height: 60vh;
+    height: 60vh;
+  }
   .hero-img {
-        object-fit: cover;
-        width: 100%;
-        height: 100%;
-        min-height: 350px;
-        z-index: 1;
-      }
-      .hero-section {
-        min-height: 100vh;
-        position: relative;
-        overflow: hidden;
-      }
-      .footer-overlay {
-        background: rgba(0,0,0,0.5);
-        color: #fff;
-        z-index: 2;
-      }
+    height: 40vh;
+    min-height: 140px;
+    width: 100vw;
+    max-width: 100vw;
+  }
+  .footer-overlay .row {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
+  }
+  .footer-overlay .col,
+  .footer-overlay .col-auto {
+    width: 100% !important;
+    margin-bottom: 0.5rem;
+  }
+  .navbar {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+}
+
+/* Prevent horizontal scroll on mobile */
+body {
+  overflow-x: hidden;
+}
