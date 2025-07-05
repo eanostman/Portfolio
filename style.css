@@ -1,22 +1,24 @@
+/* Footer overlay styles for light mode */
 .footer-overlay {
-      background-color: #e9ecefD9; /* light gray */
-      color: #212529; /* dark text */
-    }
-    @media (prefers-color-scheme: dark) {
-      .footer-overlay {
-        background-color: #343a40D9; /* dark gray */
-        color: #fff; /* light text */
-      }
-    }
+      background-color: #e9ecefD9; /* light gray with transparency */
+      color: #212529; /* dark text for readability */
+}
 
-    
-    @media (prefers-color-scheme: dark) {
+/* Footer overlay styles for dark mode */
+@media (prefers-color-scheme: dark) {
+      .footer-overlay {
+        background-color: #343a40D9; /* dark gray with transparency */
+        color: #fff; /* light text for contrast */
+      }
+}
+
+/* Navbar styles for dark mode */
+@media (prefers-color-scheme: dark) {
       .auto-navbar {
-        background-color: #212529 !important; /* Bootstrap dark */
+        background-color: #212529 !important; /* Bootstrap dark background */
       }
       .auto-navbar .navbar-brand,
       .auto-navbar .nav-link {
-        color: #b6b6b6 !important;
+        color: #b6b6b6 !important; /* muted text for dark background */
       }
-      
-    }
+}
