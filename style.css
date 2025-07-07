@@ -1,7 +1,25 @@
 /* Footer overlay styles for light mode */
 .footer-overlay {
-      background-color: #e9ecef; /* light gray with transparency */
-      color: #212529; /* dark text for readability */
+  background-color: #e9ecef;
+  color: #212529;
+  left: 0;
+  width: 100%;
+  z-index: 1030;
+  min-height: 60px;
+  box-shadow: 0 -2px 8px rgba(0,0,0,0.05);
+}
+
+@media (max-width: 576px) {
+  .footer-overlay {
+    font-size: 0.95rem;
+    padding: 0.5rem 0.5rem;
+    min-height: 48px;
+  }
+}
+
+/* Main content bottom padding to prevent footer overlap */
+.main-content {
+  padding-bottom: 90px;
 }
 
 /* Footer overlay styles for dark mode */
