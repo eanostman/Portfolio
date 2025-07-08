@@ -76,7 +76,9 @@
         color: #fff; /* light text for contrast */
       }
 }
-
+.auto-navbar {
+  background-color: #f8f9fa !important; /* Bootstrap light gray, or choose your own */
+}
 /* Navbar styles for dark mode */
 @media (prefers-color-scheme: dark) {
       .auto-navbar {
