@@ -1,104 +1,52 @@
-/* Footer overlay styles for light mode */
-.footer-overlay {
-  background-color: #e9ecef;
+/* Default (light mode) styles */
+.navbar,
+footer {
+  background-color: #f8f9fa; /* Bootstrap light bg */
   color: #212529;
-  left: 0;
-  width: 100%;
-  z-index: 1030;
-  min-height: 60px;
-  box-shadow: 0 -2px 8px rgba(0,0,0,0.05);
-  position: fixed;
-  bottom: 0;
 }
 
-/* Responsive footer layout: center copyright, right social icons */
-.footer-overlay .row {
-  flex-wrap: wrap;
+.navbar .nav-link,
+.navbar .navbar-brand,
+.navbar-toggler-icon,
+footer,
+footer a,
+footer span {
+  color: #212529;
 }
 
-/* Center copyright text always */
-.footer-overlay .col-12.col-md {
-  display: flex;
-  justify-content: center !important;
-  align-items: center;
-  width: 100%;
-}
-
-/* Social icons right on desktop, centered on mobile */
-.footer-overlay .col-12.col-md-auto {
-  display: flex;
-  justify-content: flex-end !important;
-  align-items: center;
-  padding-right: 0;
-}
-
-@media (max-width: 991.98px) {
-  .footer-overlay .col-12.col-md-auto {
-    justify-content: center !important;
-    margin-top: 0.5rem;
-    padding-right: 0;
-  }
-}
-
-@media (max-width: 767.98px) {
-  .footer-overlay .col-12.col-md {
-    order: 2;
-    width: 100%;
-    justify-content: center;
-    margin-bottom: 0.5rem;
-  }
-  .footer-overlay .col-12.col-md-auto {
-    order: 1;
-    width: 100%;
-    justify-content: center;
-    margin-bottom: 0.5rem;
-  }
-}
-
-
-@media (max-width: 576px) {
-  .footer-overlay {
-    font-size: 0.95rem;
-    padding: 0.5rem 0.5rem;
-    min-height: 48px;
-  }
-}
-
-/* Main content bottom padding to prevent footer overlap */
-.main-content {
-  padding-bottom: 90px;
-}
-
-/* Footer overlay styles for dark mode */
+/* Dark mode styles */
 @media (prefers-color-scheme: dark) {
-      .footer-overlay {
-        background-color: #343a40D9; /* dark gray with transparency */
-        color: #fff; /* light text for contrast */
-      }
-}
-.auto-navbar {
-  background-color: #f8f9fa !important; /* Bootstrap light gray, or choose your own */
-}
-/* Navbar styles for dark mode */
-@media (prefers-color-scheme: dark) {
-      .auto-navbar {
-        background-color: #212529 !important; /* Bootstrap dark background */
-      }
-      .auto-navbar .navbar-brand,
-      .auto-navbar .nav-link {
-        color: #b6b6b6 !important; /* muted text for dark background */
-      }
-}
+  .navbar,
+  footer {
+    background-color: #212529 !important; /* Bootstrap dark bg */
+    color: #fff !important;
+  }
 
-@media (max-width: 576px) {
-  .intro-overlay {
-    min-width: unset !important;
-    width: 90vw !important;
-    padding: 1rem !important;
-    font-size: 1rem !important;
+  .navbar .nav-link,
+  .navbar .navbar-brand {
+    color: #fff !important;
+  }
+  footer,
+  footer a,
+  footer span {
+    color: #fff !important;
   }
 }
-.active{
-  font-weight: bold;
+
+/* Dark mode: white hamburger icon for toggler */
+@media (prefers-color-scheme: dark) {
+  .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255,255,255,1)' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  }
 }
 
+/* Make the cover image fill the viewport on mobile */
+@media (max-width: 576px) {
+  .cover-image-fullscreen {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+  }
+}
