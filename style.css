@@ -1,12 +1,12 @@
 /* Default (light mode) styles */
-.navbar,
+.navbar, .navbar-brand,
 footer {
   background-color: #f8f9fa; /* Bootstrap light bg */
   color: #212529;
 }
 
-.navbar .nav-link,
-.navbar .navbar-brand,
+.navbar .nav-link, .navbar-brand,
+.navbar,
 .navbar-toggler-icon,
 footer,
 footer a,
@@ -16,24 +16,24 @@ footer span {
 
 /* Dark mode styles */
 @media (prefers-color-scheme: dark) {
-  .navbar,
+  .navbar, .navbar-brand,
   footer {
     background-color: #212529 !important; /* Bootstrap dark bg */
     color: #fff !important;
   }
 
   .navbar .nav-link,
-  .navbar .navbar-brand {
+  .navbar{
     color: #fff !important;
   }
-  footer,
+  footer, .navbar-brand,
   footer a,
   footer span {
     color: #fff !important;
   }
 }
 
-/* Dark mode: white hamburger icon for toggler */
+/* Dark mode: white hamburger icon */
 @media (prefers-color-scheme: dark) {
   .navbar-toggler-icon {
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255,255,255,1)' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
@@ -49,4 +49,19 @@ footer span {
     object-position: center;
     display: block;
   }
+}
+/* Navbar brand styles */
+.navbar-brand, .navbar-brand:focus,
+.navbar-brand:hover {
+  font-family: 'Bitcount';
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+/* Custom font for Bitcount */
+@font-face {
+  font-family: 'Bitcount';
+  src: url('/fonts/bitcount/bitcount.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
