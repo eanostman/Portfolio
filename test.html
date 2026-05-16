@@ -1,18 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Required metadata for encoding and mobile responsiveness. -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap core CSS used to validate navbar behavior quickly. -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+  <!-- Shared project stylesheet for theme and brand consistency. -->
+  <link rel="stylesheet" href="style.css">
+  <!-- Enables browser awareness of dark/light support. -->
+  <meta name="color-scheme" content="dark light">
   <title>Test Navbar</title>
 </head>
-<body>
+<body class="site-body">
+  <!-- Standalone navbar sandbox for layout/behavior testing. -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
+      <!-- Placeholder brand text for testing only. -->
       <a class="navbar-brand" href="#">Brand</a>
+      <!-- Toggler verifies collapse behavior in small viewports. -->
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
+      <!-- Placeholder nav links used during navbar experiments. -->
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
@@ -21,6 +31,7 @@
       </div>
     </div>
   </nav>
+  <!-- Bootstrap JS bundle powers responsive navbar interactions. -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

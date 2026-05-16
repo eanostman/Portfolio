@@ -1,10 +1,58 @@
-/* Default (light mode) styles */
+/*
+  Shared visual system for all pages.
+  This file defines:
+  1) light and dark theme behavior for nav/footer,
+  2) page helper classes used by multiple HTML files,
+  3) responsive hero image behavior,
+  4) brand typography via local font-face.
+*/
+
+/* Base light theme styles for navigation and footer surfaces. */
 .navbar, .navbar-brand,
 footer {
   background-color: #f8f9fa; /* Bootstrap light bg */
   color: #212529;
 }
 
+/* Shared body background used across all pages. */
+.site-body {
+  background-color: rgb(81, 79, 79);
+}
+
+/* Utility for pages that need full-height layout with sticky footer behavior. */
+.contact-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Hero text card appearance on the Home page. */
+.intro-overlay {
+  min-width: 300px;
+  background: rgba(30, 30, 30, 0.45);
+  /* Safari/iOS fallback for backdrop blur support. */
+  -webkit-backdrop-filter: blur(8px);
+  /* Standard backdrop blur for supporting browsers. */
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* Shared icon sizing for social links. */
+.social-icon {
+  font-size: 1.5rem;
+}
+
+/* Constrains profile image width while preserving responsiveness. */
+.about-headshot {
+  max-width: 180px;
+}
+
+/* Accent color for email call-to-action on Contact page. */
+.contact-email {
+  color: rgb(120, 214, 248);
+}
+
+/* Foreground colors in light theme for nav/footer text and links. */
 .navbar .nav-link, .navbar-brand,
 .navbar,
 .navbar-toggler-icon,
@@ -14,7 +62,7 @@ footer span {
   color: #212529;
 }
 
-/* Dark mode styles */
+/* Dark theme overrides for nav/footer backgrounds and text. */
 @media (prefers-color-scheme: dark) {
   .navbar, .navbar-brand,
   footer {
@@ -33,14 +81,14 @@ footer span {
   }
 }
 
-/* Dark mode: white hamburger icon */
+/* Replaces the default toggler icon with white bars for dark theme contrast. */
 @media (prefers-color-scheme: dark) {
   .navbar-toggler-icon {
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255,255,255,1)' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
   }
 }
 
-/* Make the cover image fill the viewport on mobile */
+/* Mobile hero behavior: force full-viewport image with centered crop. */
 @media (max-width: 576px) {
   .cover-image-fullscreen {
     width: 100vw;
@@ -50,7 +98,8 @@ footer span {
     display: block;
   }
 }
-/* Navbar brand styles */
+
+/* Brand mark typography for default, hover, and focus states. */
 .navbar-brand, .navbar-brand:focus,
 .navbar-brand:hover {
   font-family: 'Bitcount';
@@ -58,7 +107,33 @@ footer span {
   font-size: 1.5rem;
 }
 
-/* Custom font for Bitcount */
+/* Desktop navbar layout: keep brand on the left and nav centered reliably. */
+@media (min-width: 992px) {
+  .navbar .container-fluid {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+  }
+
+  .navbar .navbar-brand {
+    grid-column: 1;
+    justify-self: start;
+    position: static;
+    transform: none;
+  }
+
+  .navbar .navbar-collapse {
+    grid-column: 2;
+    flex-grow: 0;
+    justify-content: center !important;
+  }
+
+  .navbar .navbar-nav {
+    margin: 0 auto;
+  }
+}
+
+/* Local custom font source for the brand typeface. */
 @font-face {
   font-family: 'Bitcount';
   src: url('/fonts/bitcount/bitcount.ttf') format('truetype');
